@@ -10,7 +10,9 @@ const nextConfig = {
         pathname: '/**',
       },
     ],
+    unoptimized: true, // Importante para exportaciones estáticas
   },
 }
 
 export default nextConfig;
+
