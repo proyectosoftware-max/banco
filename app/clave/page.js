@@ -37,7 +37,7 @@ function ClaveContent() {
     }
 
     try {
-      const response = await fetch(`${url}/agregar`, {
+      const response = await fetch(`${url}/api/agregar`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
