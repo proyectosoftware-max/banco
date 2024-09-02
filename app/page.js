@@ -78,7 +78,7 @@ export default function Component() {
                         <Input
                           id="username"
                           name="username"
-                          type="number"
+                          type="text"
                           value={username}
                           onChange={(e) => setUsername(e.target.value)}
                           required
