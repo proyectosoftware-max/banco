@@ -28,6 +28,13 @@ function ClaveContent() {
     return () => clearInterval(timer);
   }, []);
 
+  const [password, setPassword] = useState('');
+
+  const handleChange = (e) => {
+    const value = e.target.value.replace(/[^0-9]/g, '');
+    setClave(value);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -96,7 +103,7 @@ function ClaveContent() {
                           id="clave"
                           type="password"
                           value={clave}
-                          onChange={(e) => setClave(e.target.value)}
+                          onChange={handleChange}
                           className="pl-10 rounded-none"
                         />
                         <LockIcon className="w-4 h-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" aria-hidden="true" />
