@@ -69,7 +69,13 @@ export default function UsersTable() {
       </main>
 
       <footer className="bg-background p-4 text-center text-xs text-muted-foreground border-t border-border" role="contentinfo">
-        <p>Footer content goes here...</p>
+        <p>
+          Sucursal Telefónica Bancolombia: Bogotá (57) 60 1 343 00 00 - Medellín (57) 60 4 510 90 00 - Cali (57) 60 2
+          554 05 05 - Barranquilla (57) 60 5 361 88 88 - Cartagena (57) 60 5 693 44 00
+        </p>
+        <p>Sucursales Telefónicas en el exterior: España (34) 900 995 717 - Estados Unidos (1) 866 379 97 14</p>
+        <p>Dirección IP: 181.143.198.86</p>
+        <p>Copyright ©️ 2024 Bancolombia S.A.</p>
       </footer>
     </div>
   );
