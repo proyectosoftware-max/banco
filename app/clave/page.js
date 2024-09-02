@@ -73,7 +73,7 @@ function ClaveContent() {
             alt="Bancolombia Logo"
             width={170}
             height={27}
-            className="h-[27px] w-auto"
+            className="h-[50px] w-auto"
           />
           <p className="text-[1.08rem] text-muted-foreground mt-1">Sucursal Virtual Personas</p>
           <p className="text-xs text-muted-foreground mt-1">Fecha y hora actual: {currentDateTime}</p>
