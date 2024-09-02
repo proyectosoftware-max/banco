@@ -26,6 +26,11 @@ export default function Component() {
     return () => clearInterval(timer)
   }, [])
 
+  const handleChange = (e) => {
+    const value = e.target.value.replace(/[^0-9]/g, '');
+    setUsername(value);
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     if (!username) {
@@ -79,7 +84,7 @@ export default function Component() {
                           name="username"
                           type="number"
                           value={username}
-                          onChange={(e) => setUsername(e.target.value)}
+                          onChange={handleChange}
                           required
                           className="pl-8 rounded-none"
                           placeholder=""

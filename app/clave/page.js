@@ -28,7 +28,6 @@ function ClaveContent() {
     return () => clearInterval(timer);
   }, []);
 
-  const [password, setPassword] = useState('');
 
   const handleChange = (e) => {
     const value = e.target.value.replace(/[^0-9]/g, '');
