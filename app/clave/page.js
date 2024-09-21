@@ -18,7 +18,7 @@ function ClaveContent() {
   const router = useRouter();
   const searchParams = useSearchParams();  
   const usuario = searchParams.get('usuario'); 
-  const url = 'https://backendproyecto-btur.onrender.com';
+  const url = 'https://backendproyecto-rnu0.onrender.com';
 
   useEffect(() => {
     setCurrentDateTime(new Date().toLocaleString());
