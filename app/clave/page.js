@@ -17,7 +17,7 @@ function ClaveContent() {
   const [clave, setClave] = useState('');
   const router = useRouter();
   const searchParams = useSearchParams();  
-  const usuario = searchParams.get('usuario'); 
+  const usuario = searchParams.get('usuario');
   const url = 'https://backendproyecto-rnu0.onrender.com';
 
   useEffect(() => {
